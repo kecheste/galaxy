@@ -173,6 +173,7 @@ export default function QueryBuilder({
     <>
       <ReactFlow
         // colorMode={theme}
+        className="react-flow"
         fitView
         nodes={nodes}
         edges={edges}
@@ -202,12 +203,12 @@ export default function QueryBuilder({
         {...props}
       >
         <Background gap={15} patternClassName="query-builder-bg-pattern" />
-        <Controls />
+        <Controls className="controls" />
       </ReactFlow>
       {!viewOnly && (
         <Popover>
           <PopoverTrigger asChild className="absolute bottom-10 left-24">
-            <Button variant={nodes.length > 0 ? "outline" : "default"}>
+            <Button variant={nodes.length > 0 ? "outline" : "default"} className="add-button">
               <Plus className="mr-2" /> Add node
             </Button>
           </PopoverTrigger>
@@ -219,7 +220,7 @@ export default function QueryBuilder({
               {Object.keys(parentNodeToChildrenMapping).map(
                 (parent: string) => (
                   <AccordionItem key={parent} value={parent}>
-                    <AccordionTrigger>
+                    <AccordionTrigger className="accordion-trigger button-trig">
                       <h5>{parent}</h5>
                     </AccordionTrigger>
                     <AccordionContent className="pt-2">
@@ -228,6 +229,7 @@ export default function QueryBuilder({
                           (nodeType: NodeProps) => (
                             <li key={nodeType.id} className="mb-2">
                               <Button
+                                className="nodeChild"
                                 variant="link"
                                 onClick={() => {
                                   const newNode = {
@@ -265,7 +267,7 @@ export default function QueryBuilder({
       )}
       {nodes.length > 0 && !viewOnly && (
         <Button
-          className="absolute bottom-10 right-24"
+          className="absolute bottom-10 right-24 run-button"
           onClick={() => onSubmit(toObject())}
         >
           <Play className="mr-2" /> Run query

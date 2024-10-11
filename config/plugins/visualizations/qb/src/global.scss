@@ -135,3 +135,165 @@ ol.vertical-stepper {
 .query-builder-bg-pattern.dots {
   @apply fill-foreground/20;
 }
+
+.accordion-trigger,
+.accordion-trigger:hover,
+.accordion-trigger:focus,
+.accordion-trigger:active {
+  @apply border-none flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 outline-none focus:outline-none;
+}
+
+.accordion-trigger,
+.accordion-trigger:hover,
+.accordion-trigger:focus,
+.accordion-trigger:active {
+  border: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+}
+
+.nodeChild,
+.nodeChild:hover,
+.nodeChild:focus,
+.nodeChild:active {
+  border: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+}
+
+.button-trig {
+  @apply inline-flex whitespace-nowrap bg-transparent border-none transition-colors outline-none focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0;
+}
+
+.accordion-trigger.button-trig:hover,
+.accordion-trigger.button-trig:focus,
+.accordion-trigger.button-trig:active {
+  @apply bg-transparent;
+}
+
+.but,
+.but:hover,
+.but:focus {
+  @apply inline-flex items-center outline-none justify-center whitespace-nowrap rounded-md bg-transparent border-none text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+}
+
+.relation,
+.relation:hover,
+.relation:focus,
+.relation:active {
+  @apply inline-flex w-full outline-none whitespace-nowrap rounded-md bg-transparent border-none text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+}
+
+.react-flow,
+.react-flow:hover,
+.react-flow:focus,
+.react-flow:active {
+  @apply border-none outline-none focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0;
+}
+
+.react-flow button,
+.react-flow button:hover,
+.react-flow button:active,
+.react-flow button:focus
+{
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.react-flow .react-flow__node {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.react-flow .react-flow__node:hover,
+.react-flow .react-flow__node:focus,
+.react-flow .react-flow__node:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.controls * {
+  @apply border-none outline-none bg-background;
+}
+
+div[data-radix-popper-content-wrapper] {
+  border: none !important;
+  outline: none !important;
+}
+
+.run-button,
+.run-button:hover,
+.run-button:active,
+.run-button:focus {
+  color: white !important;
+  background: rgb(2, 58, 110) !important;
+}
+
+.add-button,
+.add-button:hover,
+.add-button:active,
+.add-button:focus {
+  color: white !important;
+  background: rgb(2, 58, 110) !important;
+}
+
+.connections,
+.connections:hover,
+.connections:active,
+.connections:focus {
+  width: 100% !important;
+  border: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+}
+
+.relation,
+.relation:hover,
+.relation:focus,
+.relation:active {
+  width: 100% !important;
+  border: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+}
+
+.relation-li,
+.relation-li:hover,
+.relation-li:focus,
+.relation-li:active {
+  width: 100% !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.popover-content,
+.popover-content:hover,
+.popover-content:focus,
+.popover-content:active {
+  border: none !important;
+  outline: none !important;
+}
+
+.delete-button {
+  color: rgb(187, 187, 187) !important;
+  background: transparent !important;
+}
+
+.delete-button:hover {
+  color: rgb(255, 0, 0) !important;
+  background: transparent !important;
+}
+
+.delete-button:active {
+  color: rgb(255, 0, 0) !important;
+  background: transparent !important;
+}
+
+.delete-button:focus {
+  color: rgb(255, 0, 0) !important;
+  background: transparent !important;
+}

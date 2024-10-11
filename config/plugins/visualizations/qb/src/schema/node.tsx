@@ -487,7 +487,7 @@ export default function Node(props: any) {
     formHeaderClass,
   } = NODE_SCHEMA[data.type].props;
 
-  const _iconWrapperClass = `text-white w-24 h-24 flex justify-center items-center text-base bordered rounded-full z-50 ${iconWrapperClass}`;
+  const _iconWrapperClass = `text-white w-24 h-24 flex justify-center items-center text-base border-none rounded-full z-50 ${iconWrapperClass}`;
   const _summaryWrapperClass = ` p-2 text-xs absolute rounded-xl left-3/4 bottom-3/4 whitespace-nowrap border-4 border-background font-mono px-4 ${summaryWrapperClass}`;
   const _formHeaderClass = `-m-px p-4 text-white rounded-t ${formHeaderClass}`;
 
@@ -515,9 +515,9 @@ export default function Node(props: any) {
           const nodeType = NODE_SCHEMA[e.newNode]?.props;
           if (!nodeType) return;
           return (
-            <li key={e.label}>
-              <button className="w-full" onClick={() => onAddNode(id, e.label)}>
-                <div className="flex max-h-screen items-center overflow-y-auto p-1 px-4 hover:cursor-pointer hover:bg-foreground/10">
+            <li key={e.label} className="connections">
+              <button className="relation" onClick={() => onAddNode(id, e.label)}>
+                <div className="flex max-h-screen w-full items-center overflow-y-auto p-1 px-4 hover:cursor-pointer hover:bg-foreground/10 relation-li">
                   <div
                     className={`me-2 inline-flex h-10 w-10 items-center justify-center rounded-full ${nodeType.iconWrapperClass} text-background`}
                   >
@@ -558,7 +558,7 @@ export default function Node(props: any) {
             <PopoverContent
               hidden={viewOnly}
               side="left"
-              className="w-auto p-0 shadow-xl"
+              className="w-full p-0 shadow-xl"
             >
               <EdgeSelector />
             </PopoverContent>
@@ -574,7 +574,7 @@ export default function Node(props: any) {
             <PopoverContent
               hidden={viewOnly}
               side="right"
-              className="w-auto p-0 shadow-xl"
+              className="w-full p-0 shadow-xl"
             >
               <EdgeSelector />
             </PopoverContent>
@@ -597,7 +597,7 @@ export default function Node(props: any) {
             <PopoverContent
               hidden={viewOnly}
               side="right"
-              className="border-none bg-transparent p-0 shadow-none"
+              className="border-none bg-transparent p-0 shadow-none popover-content"
               onPointerDownOutside={() => toggleForm(false)}
             >
               <div className="rounded-b border border-border bg-card p-0 shadow-2xl">
@@ -639,7 +639,7 @@ export default function Node(props: any) {
               <div className="mt-4 text-xs">
                 <Button
                   variant="link"
-                  className="text-slate-500 hover:text-red-500"
+                  className="delete-button"
                   onClick={deleteNode}
                 >
                   <Trash2 size={18} className="me-2 inline" /> Delete
